@@ -10,6 +10,8 @@
   "author": "spinfal",
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^18.9.0"
+    "@octokit/rest": "^18.9.0",
+    "node-cron": "^3.0.3",
+    "octokit": "^4.0.2"
   }
 }
