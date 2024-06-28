@@ -1,13 +1,12 @@
 const { Octokit } = require('@octokit/rest');
 const config = require('./config.json');
-const cron = require('node-cron');
-
+const cron = require('node-cron'); // Assuming this is line 3
 //set values for commit
 const commitOwner = config.owner;
 const commitRepo = config.repo;
-const commitMessage = config.commit_message;
+const commitMessage = 'test';
 const commitContent = config.file_content;
-
+try{
 function randomletters(length) {
     let text = '';
     const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -44,4 +43,8 @@ const task = async () => {
 };
 
 // Schedule the task to run every day at 10:00
-cron.schedule('0 10 * * *', task);
+cron.schedule('00 10 * * *', task);
+
+} catch (error) {
+    console.error(error);
+}
